@@ -1,0 +1,6 @@
+framework module Pods_DrivingPhase {
+  umbrella header "Pods-DrivingPhase-umbrella.h"
+
+  export *
+  module * { export * }
+}

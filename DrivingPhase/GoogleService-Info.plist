@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>175487580406-f6v85j3bqb35akj4cv3ndkkdqd000drr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.175487580406-f6v85j3bqb35akj4cv3ndkkdqd000drr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDzxDcrunBiLGccy-7_RDUEj2z2asB7U2I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>175487580406</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.junaidzaidi.DriveWell</string>
+	<key>PROJECT_ID</key>
+	<string>drivetest-ios-6dbd4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>drivetest-ios-6dbd4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:175487580406:ios:de032ca30d6b44819314d7</string>
+	<key>DATABASE_URL</key>
+	<string>https://drivetest-ios-6dbd4.firebaseio.com</string>
+</dict>
+</plist>
