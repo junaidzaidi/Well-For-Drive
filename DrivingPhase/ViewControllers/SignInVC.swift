@@ -134,6 +134,7 @@ class SignInVC: UIViewController {
         vehicle = 4
     }
     @IBAction func continueBtnTapped(_ sender: UIButton) {
+        
         if(vehicle == nil || gender == nil || fullNameTxtFld.text == "" || companyTxtFld.text == "" || ageTxtFld.text == ""){
             errorLbl.isHidden = false
         }
@@ -141,11 +142,21 @@ class SignInVC: UIViewController {
 //            let db = Firestore.firestore()
 //            print(db)
             ref = Database.database().reference()
+            continueBtn.setTitle(nil, for: .normal)
+            let spinner = UIActivityIndicatorView(style: .medium)
+            spinner.color = UIColor(red: 28/255, green: 164/255, blue: 93/255, alpha: 0.8)
+            spinner.center = continueBtn.center
+            continueBtn.superview?.addSubview(spinner)
+            DispatchQueue.main.async {
+                spinner.startAnimating()
+            }
+            
             self.ref?.child("user").childByAutoId().setValue(["name": fullNameTxtFld.text ?? "",
             "age": ageTxtFld.text ?? "",
             "company": companyTxtFld.text ?? "",
             "gender": gender ?? false ? "F" : "M",
             "vehicle": getVehicleType(vehicle: vehicle ?? 0)]){ err,ref   in
+                spinner.stopAnimating()
                 guard err == nil else{
 //                    debugPrint(err)
                     let alert = UIAlertController(title: "Unable To Connect", message: "Please Check Your Internet Connection", preferredStyle: .alert)
@@ -153,12 +164,14 @@ class SignInVC: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                     return
                 }
+                
                 DataHandler.sharedInstance.loggedInUser = User(username: self.fullNameTxtFld.text ?? "", age: self.ageTxtFld.text ?? "", gender: self.gender ?? false ? "F" : "M", company: self.companyTxtFld.text ?? "", vehicleType: self.getVehicleType(vehicle: self.vehicle ?? 0))
                DataHandler.saveUser(user: DataHandler.sharedInstance.loggedInUser!)
                let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC ?? HomeVC()
                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
+ 
     }
     func getVehicleType(vehicle : Int) -> String {
         switch (vehicle) {
