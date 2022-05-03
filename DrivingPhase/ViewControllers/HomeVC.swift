@@ -46,6 +46,13 @@ class HomeVC: UIViewController {
          noBtn.clipsToBounds = true
          noBtn.layer.borderColor = UIColor(red: 28/255, green: 164/255, blue: 93/255, alpha: 0.45).cgColor
          noBtn.layer.borderWidth = 3
+        
+        notTiredBtn.backgroundColor = UIColor.clear
+        aBitTiredBtn.backgroundColor = UIColor.clear
+        exhausedBtn.backgroundColor = UIColor(red: 28/255, green: 164/255, blue: 93/255, alpha: 0.3)
+        exhausedBtn.alpha = 0.6
+        veryTiredBtn.backgroundColor = UIColor.clear
+        currentFeeling = 3
     }
     
     @IBAction func lastNightSliderValChanged(_ sender: UISlider) {

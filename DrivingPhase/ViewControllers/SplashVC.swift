@@ -17,7 +17,7 @@ class SplashVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.perform(#selector(self.moveToVC), with: nil, afterDelay: 0.6)
+        self.perform(#selector(self.moveToVC), with: nil, afterDelay: 2)
     }
     
     @objc func moveToVC() {
